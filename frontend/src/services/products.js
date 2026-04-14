@@ -13,3 +13,18 @@ export async function getProducts() {
 
   return data
 }
+
+export async function getProductById(id) {
+  const { data, error } = await supabase
+    .from('produtos')
+    .select('*')
+    .eq('id', id)
+    .eq('ativo', true)
+    .single()
+
+  if (error) {
+    throw error
+  }
+
+  return data
+}
