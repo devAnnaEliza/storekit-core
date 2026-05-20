@@ -1,5 +1,6 @@
 from sqlalchemy import Float, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import relationship
 
 from app.db.database import Base
 
@@ -31,4 +32,10 @@ class Product(Base):
     image: Mapped[str] = mapped_column(
         String,
         nullable=False,
+    )
+
+    variants = relationship(
+        "ProductVariant",
+        back_populates="product",
+        cascade="all, delete-orphan"
     )

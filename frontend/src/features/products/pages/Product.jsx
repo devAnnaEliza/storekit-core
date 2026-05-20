@@ -8,7 +8,7 @@ function Product() {
   const { id } = useParams()
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [selectedVariant, setSelectedVariant] = useState('')
+  const [selectedVariant, setSelectedVariant] = useState(null)
   const [feedbackMessage, setFeedbackMessage] = useState('')
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function Product() {
 
   if (!product) return <h1>Produto não encontrado.</h1>
 
-  const variants = product.variants || ['Único']
+  const variants = product.variants || []
 
   function handleAddToCart() {
     if (!selectedVariant) return
@@ -52,19 +52,19 @@ function Product() {
         <div className="flex gap-2">
           {variants.map((variant) => (
             <button
-              key={variant}
+              key={variant.id}
               type="button"
               onClick={() => setSelectedVariant(variant)}
               className="rounded border border-zinc-600 px-4 py-2"
             >
-              {variant}
+              {variant.name}
             </button>
           ))}
         </div>
 
         {selectedVariant && (
           <p className="mt-3">
-            Tamanho selecionado: <strong>{selectedVariant}</strong>
+            Tamanho selecionado: <strong>{selectedVariant.name}</strong>
           </p>
         )}
       </section>
