@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { addToCart } from '@/features/cart/services/cart'
+import { useCart } from '@/features/cart/hooks/useCart'
 import { getProductById } from '@/features/products/services/products.service'
 
 function Product() {
   const { id } = useParams()
+  const { addToCart } = useCart()
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [selectedVariant, setSelectedVariant] = useState(null)
