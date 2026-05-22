@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import ProductCard from '@/features/products/components/ProductCard'
 import { getProducts } from '@/features/products/services/products.service'
-import { Link } from 'react-router-dom'
+import { storeConfig } from '@/config/store.config'
 
 function Home() {
   const [products, setProducts] = useState([])
@@ -18,7 +19,9 @@ function Home() {
 
   return (
     <main className="min-h-screen bg-black p-8 text-white">
-      <h1 className="mb-8 text-4xl font-bold">StoreKit Core</h1>
+      <h1 className="mb-8 text-4xl font-bold">
+        {storeConfig.name}
+      </h1>
 
       <Link
         to="/cart"

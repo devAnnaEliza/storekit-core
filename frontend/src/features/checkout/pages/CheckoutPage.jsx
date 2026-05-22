@@ -1,10 +1,11 @@
 import { useCart } from '@/features/cart/hooks/useCart'
+import { storeConfig } from '@/config/store.config'
 
 function CheckoutPage() {
   const { cartItems, subtotal } = useCart()
 
   function handleCheckout() {
-    const phone = '5521900000000' // LEMBRAR DE SUBSTITUIR PELO NÚMERO REAL
+    const phone = storeConfig.contact.whatsapp
 
     const itemsMessage = cartItems
       .map(
@@ -13,7 +14,7 @@ function CheckoutPage() {
       )
       .join('%0A')
 
-    const message = `Olá! Quero finalizar este pedido:%0A%0A${itemsMessage}%0A%0ATotal: R$ ${subtotal.toFixed(2)}`
+    const message = `Olá! Quero finalizar este pedido na ${storeConfig.name}:%0A%0A${itemsMessage}%0A%0ATotal: R$ ${subtotal.toFixed(2)}`
 
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank')
   }
