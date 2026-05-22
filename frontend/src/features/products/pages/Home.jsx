@@ -6,11 +6,19 @@ import { getProducts } from '@/features/products/services/products.service'
 
 function Home() {
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     async function loadProducts() {
-      const data = await getProducts()
-      setProducts(data)
+      try {
+        const data = await getProducts()
+        setProducts(data)
+      } catch {
+        setError('Não foi possível carregar os produtos.')
+      } finally {
+        setLoading(false)
+      }
     }
 
     loadProducts()
@@ -28,15 +36,36 @@ function Home() {
         </h1>
 
         <p className="mt-4 max-w-2xl text-zinc-400">
-          Produtos selecionados com compra rápida e atendimento direto pelo WhatsApp.
+          Produtos selecionados com compra rápida e atendimento direto pelo
+          WhatsApp.
         </p>
       </section>
 
-      <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </section>
+      {loading && (
+        <p className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 text-zinc-400">
+          Carregando produtos...
+        </p>
+      )}
+
+      {!loading && error && (
+        <p className="rounded-2xl border border-red-900 bg-red-950/30 p-6 text-red-300">
+          {error}
+        </p>
+      )}
+
+      {!loading && !error && products.length === 0 && (
+        <p className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 text-zinc-400">
+          Nenhum produto cadastrado no momento.
+        </p>
+      )}
+
+      {!loading && !error && products.length > 0 && (
+        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </section>
+      )}
     </main>
   )
 }
