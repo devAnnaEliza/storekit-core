@@ -11,7 +11,7 @@ export const storeConfig = {
   },
 
   contact: {
-    whatsapp: '5521900000000',
+    whatsapp: '5521997277443',
     email: '',
     instagram: '',
   },

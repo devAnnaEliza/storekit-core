@@ -14,11 +14,17 @@ function CheckoutPage() {
         (item) =>
           `- ${item.productName} | ${item.variantName} | Qtd: ${item.quantity} | R$ ${Number(item.price).toFixed(2)}`,
       )
-      .join('%0A')
+      .join('\n')
 
-    const message = `Olá! Quero finalizar este pedido na ${storeConfig.brand.name}:%0A%0A${itemsMessage}%0A%0ATotal: R$ ${subtotal.toFixed(2)}`
+    const message = `Olá! Quero finalizar este pedido na ${storeConfig.brand.name}:
 
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank')
+  ${itemsMessage}
+
+  Total: R$ ${subtotal.toFixed(2)}`
+
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
   }
 
   return (
