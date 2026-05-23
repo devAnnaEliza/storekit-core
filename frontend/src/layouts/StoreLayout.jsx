@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom'
 
-import { storeConfig } from '@/config/store.config'
+import { storeConfig } from '../config/store/store.config'
 import { useCart } from '@/features/cart/hooks/useCart'
 
 function StoreLayout() {
@@ -14,7 +14,7 @@ function StoreLayout() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
           <Link to="/" className="group">
             <span className="block text-lg font-bold tracking-tight sm:text-xl">
-              {storeConfig.name}
+              {storeConfig.brand.name}
             </span>
             <span className="hidden text-xs text-slate-500 sm:block">
               Storefront demo

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { storeConfig } from '@/config/store.config'
+import { storeConfig } from '../../../config/store/store.config'
 import ProductCard from '@/features/products/components/ProductCard'
 import { getProducts } from '@/features/products/services/products.service'
 
@@ -32,7 +32,7 @@ function Home() {
         </p>
 
         <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
-          {storeConfig.name}
+          {storeConfig.brand.name}
         </h1>
 
         <p className="mt-4 max-w-2xl text-zinc-400">
