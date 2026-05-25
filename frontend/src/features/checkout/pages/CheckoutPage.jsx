@@ -114,7 +114,7 @@ Total: R$ ${subtotal.toFixed(2)}`
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 block w-full rounded-xl bg-white px-4 py-3 text-center text-sm font-medium text-black transition hover:bg-zinc-200"
+            className="mt-6 block w-full rounded-xl bg-white px-4 py-3 text-center text-sm font-medium text-black! transition hover:bg-zinc-200"
           >
             Enviar pelo WhatsApp
           </a>
