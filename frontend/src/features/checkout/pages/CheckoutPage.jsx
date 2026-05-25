@@ -1,10 +1,11 @@
+import { useContext } from 'react'
 import { Link } from 'react-router'
 
-import { useCart } from '@/features/cart/context/CartContext'
+import { CartContext } from '@/features/cart/context/cart-context'
 import { storeConfig } from '@/config/store/store.config'
 
-export function CheckoutPage() {
-  const { cartItems, subtotal } = useCart()
+export default function CheckoutPage() {
+  const { cartItems, subtotal } = useContext(CartContext)
 
   const itemsMessage = cartItems
     .map(
