@@ -1,19 +1,20 @@
 import { themeConfig } from '../theme/theme.config'
 import { ecosystemConfig } from '../ecosystem/ecosystem.config'
+import logoRoccart from '../../assets/roccart/logo-colorida.PNG'
 
 export const storeConfig = {
   brand: {
-    name: 'StoreKit Core',
-    tagline: 'E-commerce modular para marcas digitais',
+    name: 'Roccart',
+    tagline: '',
     description:
-      'Uma base reutilizável para lojas online com catálogo, carrinho e checkout via WhatsApp.',
-    logo: null,
+      'Camisetas autorais criadas para expressar fé, arte e identidade com elegância.',
+    logo: logoRoccart,
   },
 
   contact: {
     whatsapp: '5521997277443',
     email: '',
-    instagram: '',
+    instagram: '@cia.roccart',
   },
 
   locale: {

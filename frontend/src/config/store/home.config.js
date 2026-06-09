@@ -1,20 +1,19 @@
 export const homeConfig = {
   hero: {
-    eyebrow: 'Demo comercial',
+    eyebrow: 'Roccart',
 
-    title:
-      'Loja online modular para marcas em crescimento',
+    title: 'Camisetas autorais com arte, fé e identidade',
 
     description:
-      'Uma demo reutilizável de e-commerce com catálogo, carrinho, variações de produto e checkout via WhatsApp.',
+      'Uma camiseta criada para vestir propósito com uma estética limpa, expressiva e atemporal.',
 
     primaryButton: {
-      label: 'Ver produtos',
+      label: 'Ver camiseta',
       href: '#products',
     },
 
     secondaryButton: {
-      label: 'Conhecer estrutura',
+      label: 'Falar no WhatsApp',
       href: '#about',
     },
   },
