@@ -4,6 +4,8 @@ import { Link, useParams } from 'react-router-dom'
 import { useCart } from '@/features/cart/hooks/useCart'
 import { getProductById } from '@/features/products/services/products.service'
 
+const CARD_PRICE = 55
+
 function Product() {
   const { id } = useParams()
   const { addToCart } = useCart()
@@ -12,6 +14,7 @@ function Product() {
   const [loading, setLoading] = useState(true)
   const [selectedVariant, setSelectedVariant] = useState(null)
   const [feedbackMessage, setFeedbackMessage] = useState('')
+  const [feedbackType, setFeedbackType] = useState('success')
 
   useEffect(() => {
     async function loadProduct() {
@@ -27,7 +30,7 @@ function Product() {
   if (loading) {
     return (
       <main className="py-8 sm:py-10">
-        <p className="text-slate-400">Carregando produto...</p>
+        <p className="font-body text-[#6e6969]">Carregando produto...</p>
       </main>
     )
   }
@@ -35,7 +38,9 @@ function Product() {
   if (!product) {
     return (
       <main className="py-8 sm:py-10">
-        <h1 className="text-3xl font-bold">Produto não encontrado.</h1>
+        <h1 className="font-ui text-3xl font-semibold text-[#00174e]">
+          Produto não encontrado.
+        </h1>
       </main>
     )
   }
@@ -46,6 +51,9 @@ function Product() {
   const hasSelectableVariants =
     variants.length > 1 || variants[0]?.name !== 'Único'
 
+  const selectedStock = selectedVariant?.stock_quantity ?? 0
+  const isSelectedVariantAvailable = selectedStock > 0
+
   function handleAddToCart() {
     const variantToAdd = hasSelectableVariants
       ? selectedVariant
@@ -53,9 +61,10 @@ function Product() {
 
     if (!variantToAdd) return
 
-    addToCart(product, variantToAdd)
+    const result = addToCart(product, variantToAdd)
 
-    setFeedbackMessage('Produto adicionado ao carrinho com sucesso!')
+    setFeedbackType(result.success ? 'success' : 'error')
+    setFeedbackMessage(result.message)
 
     setTimeout(() => {
       setFeedbackMessage('')
@@ -66,13 +75,13 @@ function Product() {
     <main className="py-8 sm:py-10">
       <Link
         to="/"
-        className="mb-8 inline-flex text-sm text-slate-400 underline transition hover:text-white"
+        className="font-ui mb-8 inline-flex text-sm font-medium text-[#6e6969] underline transition hover:text-[#00174e]"
       >
         Voltar para produtos
       </Link>
 
       <section className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/3 shadow-2xl shadow-black/20">
+        <div className="overflow-hidden rounded-3xl border border-[#00174e]/10 bg-white shadow-lg">
           <img
             src={product.image}
             alt={product.name}
@@ -81,72 +90,98 @@ function Product() {
         </div>
 
         <div className="flex flex-col justify-center">
-          <p className="mb-2 text-sm uppercase tracking-[0.3em] text-slate-500">
-            Produto
+          <p className="font-ui mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#ea8506]">
+            Produto oficial
           </p>
 
-          <h1 className="text-3xl font-bold tracking-tight text-slate-50 sm:text-5xl">
+          <h1 className="font-ui text-3xl font-semibold tracking-tight text-[#00174e] sm:text-5xl">
             {product.name}
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-slate-400">
+          <p className="font-body mt-5 max-w-xl text-base leading-7 text-[#6e6969]">
             {product.description}
           </p>
 
-          <strong className="mt-6 block text-3xl font-semibold text-slate-50">
-            R$ {Number(product.price).toFixed(2)}
-          </strong>
+          <div className="mt-6 rounded-2xl border border-[#00174e]/10 bg-white p-5">
+            <strong className="font-ui block text-3xl font-semibold text-[#00174e]">
+              R$ {Number(product.price).toFixed(2)}
+            </strong>
+
+            <p className="font-body mt-2 text-sm leading-6 text-[#6e6969]">
+              Pix ou dinheiro: R$ {Number(product.price).toFixed(2)}
+              <br />
+              Cartão: R$ {CARD_PRICE.toFixed(2)}
+            </p>
+          </div>
 
           {hasSelectableVariants && (
             <section className="mt-8">
-              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <h3 className="font-ui mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#00174e]">
                 Selecione o tamanho
               </h3>
 
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {variants.map((variant) => {
                   const isSelected = selectedVariant?.id === variant.id
+                  const isUnavailable = (variant.stock_quantity ?? 0) <= 0
 
                   return (
                     <button
                       key={variant.id}
                       type="button"
+                      disabled={isUnavailable}
                       onClick={() => {
                         setSelectedVariant(variant)
                         setFeedbackMessage('')
                       }}
-                      className={`rounded-full border px-5 py-2 transition ${
+                      className={`font-ui rounded-full border px-5 py-2 text-sm font-medium transition ${
                         isSelected
-                          ? 'border-white bg-white text-black!'
-                          : 'border-white/10 bg-white/3 text-slate-200 hover:border-white/20 hover:bg-white/5'
-                      }`}
+                          ? 'border-[#00174e] bg-[#00174e] text-white'
+                          : 'border-[#00174e]/15 bg-white text-[#00174e] hover:border-[#ea8506] hover:text-[#ea8506]'
+                      } disabled:cursor-not-allowed disabled:border-[#6e6969]/20 disabled:bg-[#f4f4f4] disabled:text-[#6e6969]/50`}
                     >
                       {variant.name}
                     </button>
                   )
                 })}
               </div>
+
+              {selectedVariant && (
+                <p className="font-body mt-4 text-sm text-[#6e6969]">
+                  Tamanho {selectedVariant.name}: {selectedStock} unidades
+                  disponíveis.
+                </p>
+              )}
             </section>
           )}
 
           <button
             type="button"
-            disabled={hasSelectableVariants && !selectedVariant}
+            disabled={
+              (hasSelectableVariants && !selectedVariant) ||
+              (selectedVariant && !isSelectedVariantAvailable)
+            }
             onClick={handleAddToCart}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 font-semibold text-black! transition duration-200 hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40 sm:w-fit"
+            className="font-ui mt-8 inline-flex items-center justify-center rounded-full bg-[#00174e] px-6 py-3 font-semibold text-white transition duration-200 hover:bg-[#ea8506] disabled:cursor-not-allowed disabled:opacity-40 sm:w-fit"
           >
             Adicionar ao carrinho
           </button>
 
           {feedbackMessage && (
-            <p className="mt-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200 backdrop-blur-sm">
+            <p
+              className={`font-body mt-4 rounded-2xl border px-4 py-3 text-sm ${
+                feedbackType === 'success'
+                  ? 'border-emerald-500/20 bg-emerald-50 text-emerald-700'
+                  : 'border-red-500/20 bg-red-50 text-red-700'
+              }`}
+            >
               {feedbackMessage}
             </p>
           )}
 
           {hasSelectableVariants && !selectedVariant && (
-            <p className="mt-4 text-sm text-slate-500">
-              Selecione uma variação antes de adicionar ao carrinho.
+            <p className="font-body mt-4 text-sm text-[#6e6969]">
+              Selecione um tamanho antes de adicionar ao carrinho.
             </p>
           )}
         </div>

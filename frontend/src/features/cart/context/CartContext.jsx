@@ -17,7 +17,11 @@ export function CartProvider({ children }) {
   }, [cartItems])
 
   function addToCart(product, variant) {
+    let result = { success: true, message: 'Produto adicionado ao carrinho.' }
+
     setCartItems((prev) => {
+      const stockQuantity = variant.stock_quantity ?? 0
+
       const existingItem = prev.find(
         (item) =>
           item.productId === product.id &&
@@ -25,6 +29,15 @@ export function CartProvider({ children }) {
       )
 
       if (existingItem) {
+        if (existingItem.quantity >= stockQuantity) {
+          result = {
+            success: false,
+            message: 'Quantidade máxima disponível para este tamanho atingida.',
+          }
+
+          return prev
+        }
+
         return prev.map((item) =>
           item.id === existingItem.id
             ? {
@@ -35,19 +48,32 @@ export function CartProvider({ children }) {
         )
       }
 
+      if (stockQuantity <= 0) {
+        result = {
+          success: false,
+          message: 'Este tamanho está indisponível no momento.',
+        }
+
+        return prev
+      }
+
       const newItem = {
         id: crypto.randomUUID(),
         productId: product.id,
         productName: product.name,
         image: product.image,
         price: product.price,
+        cardPrice: 55,
         variantId: variant.id,
         variantName: variant.name,
+        stockQuantity,
         quantity: 1,
       }
 
       return [...prev, newItem]
     })
+
+    return result
   }
 
   function removeFromCart(itemId) {
@@ -58,11 +84,13 @@ export function CartProvider({ children }) {
 
   function increaseQuantity(itemId) {
     setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === itemId
-          ? { ...item, quantity: item.quantity + 1 }
-          : item,
-      ),
+      prev.map((item) => {
+        if (item.id !== itemId) return item
+
+        if (item.quantity >= item.stockQuantity) return item
+
+        return { ...item, quantity: item.quantity + 1 }
+      }),
     )
   }
 

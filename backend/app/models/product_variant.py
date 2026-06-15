@@ -27,3 +27,9 @@ class ProductVariant(Base):
         "Product",
         back_populates="variants",
     )
+
+    stock_quantity: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+        default=0,
+    )

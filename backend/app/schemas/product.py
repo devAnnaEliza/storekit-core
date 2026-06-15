@@ -4,6 +4,7 @@ from pydantic import BaseModel
 class ProductVariantResponse(BaseModel):
     id: int
     name: str
+    stock_quantity: int
 
     class Config:
         from_attributes = True
