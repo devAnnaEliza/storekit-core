@@ -12,7 +12,7 @@ export const storeConfig = {
   },
 
   contact: {
-    whatsapp: '5521997277443',
+    whatsapp: '5521990387622',
     email: '',
     instagram: '@cia.roccart',
   },

@@ -45,7 +45,11 @@ function Product() {
     )
   }
 
-  const variants = product.variants || []
+  const sizeOrder = ['P', 'M', 'G', 'GG', 'XG', 'XGG']
+
+  const variants = [...(product.variants || [])].sort(
+    (a, b) => sizeOrder.indexOf(a.name) - sizeOrder.indexOf(b.name),
+  )
   const defaultVariant = variants[0]
 
   const hasSelectableVariants =
