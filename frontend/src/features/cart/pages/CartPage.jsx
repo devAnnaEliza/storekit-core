@@ -9,7 +9,6 @@ function CartPage() {
     decreaseQuantity,
     removeFromCart,
     clearCart,
-    subtotal,
   } = useCart()
 
   return (
@@ -107,8 +106,8 @@ function CartPage() {
 
             <div className="mt-6 space-y-3 border-b border-white/10 pb-6">
               <div className="flex justify-between text-slate-400">
-                <span>Subtotal</span>
-                <span>R$ {subtotal.toFixed(2)}</span>
+                <span>Forma de pagamento</span>
+                <span>A definir</span>
               </div>
 
               <div className="flex justify-between text-slate-400">
@@ -117,9 +116,22 @@ function CartPage() {
               </div>
             </div>
 
-            <div className="mt-6 flex justify-between text-xl font-semibold text-slate-50">
-              <span>Total</span>
-              <span>R$ {subtotal.toFixed(2)}</span>
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/3 p-4">
+              <p className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-[#ea8506]">
+                Valores da peça
+              </p>
+
+              <div className="mt-3 space-y-2 text-sm text-slate-300">
+                <div className="flex justify-between">
+                  <span>Pix ou dinheiro</span>
+                  <span>R$ 50,00</span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span>Cartão</span>
+                  <span>R$ 55,00</span>
+                </div>
+              </div>
             </div>
 
             <Link
