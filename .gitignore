@@ -1,62 +1,63 @@
-# Node / Frontend
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
 
+.venv/
+venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+.coverage
+.coverage.*
+htmlcov/
+
+*.egg-info/
+.eggs/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Node
 node_modules/
-dist/
-build/
-out/
-coverage/
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-.parcel-cache/
-.cache/
-*.tsbuildinfo
+# Build
+dist/
+build/
 
-
-# Python / Backend
-
-backend/.venv/
-backend/__pycache__/
-backend/.pytest_cache/
-
-*.pyc
-*.pyo
-*.pyd
-__pycache__/
-
-
-# Environment variables
-
-.env
-.env.local
-.env.*.local
-.env.development
-.env.production
-
+# Vite
+vite.svg
 
 # IDE
-
 .vscode/
 .idea/
 
 *.swp
 *.swo
-*~
 
-
-# OS
-
+# Operating System
 .DS_Store
 Thumbs.db
 
+# Logs
+*.log
 
-# Temp
-
+# Temporary
 tmp/
 temp/
-*.tmp
-.vercel
-.env*
+.cache/
+
+# Coverage
+coverage/
