@@ -61,3 +61,7 @@ temp/
 
 # Coverage
 coverage/
+
+# Vercel
+.vercel/
+**/.vercel/
