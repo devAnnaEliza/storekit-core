@@ -1,33 +1,26 @@
-import { themeConfig } from '../theme/theme.config'
-import { ecosystemConfig } from '../ecosystem/ecosystem.config'
-import logoRoccart from '../../assets/roccart/logo-colorida-cortada.PNG'
-
 export const storeConfig = {
   brand: {
-    name: 'Cia. Roccart',
-    tagline: '',
+    name: 'StoreKit Core',
+    tagline: 'Loja virtual modular',
     description:
-      'Camisetas autorais criadas para expressar fé, arte e identidade com elegância.',
-    logo: logoRoccart,
+      'Estrutura reutilizável para criação de lojas virtuais modernas, responsivas e adaptáveis a diferentes marcas.',
+    logo: null,
   },
 
   contact: {
-    whatsapp: '5521990387622',
+    whatsapp: '',
     email: '',
-    instagram: '@cia.roccart',
+    instagram: '',
   },
 
-  locale: {
-    currency: 'BRL',
-    language: 'pt-BR',
+  theme: {
+    colors: {
+      primary: '#111827',
+      secondary: '#f9fafb',
+      accent: '#2563eb',
+      text: '#111827',
+      muted: '#6b7280',
+      background: '#ffffff',
+    },
   },
-
-  checkout: {
-    enabled: true,
-    method: 'whatsapp',
-  },
-
-  theme: themeConfig,
-
-  ecosystem: ecosystemConfig,
 }

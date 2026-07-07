@@ -72,7 +72,7 @@ Forma de pagamento:
         </h1>
 
         <p className="font-body mt-4 max-w-md text-sm leading-7 text-white/65">
-          Adicione a camisa ao carrinho antes de finalizar sua reserva.
+          Adicione um produto ao carrinho antes de finalizar seu pedido.
         </p>
 
         <Link
@@ -148,7 +148,7 @@ Forma de pagamento:
 
         <aside className="h-fit rounded-4xl border border-white/10 bg-white/5 p-6 backdrop-blur-md lg:sticky lg:top-28">
           <p className="font-ui text-xs font-semibold uppercase tracking-[0.25em] text-[#ea8506]">
-            Cia Roccart
+            StoreKit Core
           </p>
 
           <h2 className="font-ui mt-3 text-xl font-semibold text-white">

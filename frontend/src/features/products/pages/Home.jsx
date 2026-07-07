@@ -32,15 +32,8 @@ function Home() {
           <div className="home-hero__content">
             <p className="home-hero__eyebrow">Loja oficial</p>
 
-            <h1 className="home-hero__brand">CIA ROCCART</h1>
-
-            <p className="home-hero__subtitle">
-              Reproduzindo o caráter de Cristo através da arte.
-            </p>
-
-            <p className="home-hero__description">
-              Vestuário desenvolvido para o projeto Casa do Julgamento.
-            </p>
+            <h1 className="home-hero__brand">STOREKIT CORE</h1>
+            
           </div>
 
           <div className="home-showcase__product">

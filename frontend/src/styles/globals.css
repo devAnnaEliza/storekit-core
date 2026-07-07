@@ -27,7 +27,6 @@ body::before {
   z-index: 0;
   width: min(42rem, 80vw);
   height: min(42rem, 80vw);
-  background-image: url("/src/assets/roccart/marca-dagua-branca.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

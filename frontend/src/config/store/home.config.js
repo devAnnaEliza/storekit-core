@@ -1,20 +1,10 @@
 export const homeConfig = {
   hero: {
-    eyebrow: 'Roccart',
-
-    title: 'Camisetas autorais com arte, fé e identidade',
-
+    eyebrow: 'StoreKit Core',
+    title: 'Uma base reutilizável para lojas virtuais',
     description:
-      'Uma camiseta criada para vestir propósito com uma estética limpa, expressiva e atemporal.',
-
-    primaryButton: {
-      label: 'Ver camiseta',
-      href: '#products',
-    },
-
-    secondaryButton: {
-      label: 'Falar no WhatsApp',
-      href: '#about',
-    },
+      'Template modular para e-commerces com catálogo, página de produto, carrinho e checkout integrados.',
+    primaryAction: 'Ver produto',
+    secondaryAction: 'Conhecer estrutura',
   },
 }
