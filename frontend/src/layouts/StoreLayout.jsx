@@ -24,7 +24,7 @@ function StoreLayout() {
 
           <Link
             to="/cart"
-            className="font-ui rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition hover:border-[#ea8506] hover:text-[#ea8506]"
+            className="font-ui rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition hover:border-[#38bdf8] hover:text-[#38bdf8]"
           >
             Carrinho ({totalItems})
           </Link>

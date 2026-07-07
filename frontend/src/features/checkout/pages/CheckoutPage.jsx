@@ -63,7 +63,7 @@ Forma de pagamento:
   if (cartItems.length === 0) {
     return (
       <main className="mx-auto flex min-h-[calc(100vh-80px)] max-w-2xl flex-col items-center justify-center px-6 py-10 text-center">
-        <p className="font-ui text-xs font-semibold uppercase tracking-[0.35em] text-[#ea8506]">
+        <p className="font-ui text-xs font-semibold uppercase tracking-[0.35em] text-[#38bdf8]">
           Checkout
         </p>
 
@@ -77,7 +77,7 @@ Forma de pagamento:
 
         <Link
           to="/"
-          className="font-ui mt-8 rounded-full bg-[#ea8506] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#d97800]"
+          className="font-ui mt-8 rounded-full bg-[#38bdf8] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#0ea5e9]"
         >
           Voltar para a loja
         </Link>
@@ -89,13 +89,13 @@ Forma de pagamento:
     <main className="mx-auto max-w-6xl px-6 py-8 sm:py-6 lg:py-7">
       <Link
         to="/cart"
-        className="font-ui mb-8 inline-flex text-sm font-medium text-white/60 transition hover:text-[#ea8506]"
+        className="font-ui mb-8 inline-flex text-sm font-medium text-white/60 transition hover:text-[#38bdf8]"
       >
         ← Voltar ao carrinho
       </Link>
 
       <section className="mb-6">
-        <p className="font-ui text-xs font-semibold uppercase tracking-[0.35em] text-[#ea8506]">
+        <p className="font-ui text-xs font-semibold uppercase tracking-[0.35em] text-[#38bdf8]">
           Checkout
         </p>
 
@@ -118,7 +118,7 @@ Forma de pagamento:
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <p className="font-ui text-xs font-semibold uppercase tracking-[0.25em] text-[#ea8506]">
+                  <p className="font-ui text-xs font-semibold uppercase tracking-[0.25em] text-[#38bdf8]">
                     Produto
                   </p>
 
@@ -147,7 +147,7 @@ Forma de pagamento:
         </div>
 
         <aside className="h-fit rounded-4xl border border-white/10 bg-white/5 p-6 backdrop-blur-md lg:sticky lg:top-28">
-          <p className="font-ui text-xs font-semibold uppercase tracking-[0.25em] text-[#ea8506]">
+          <p className="font-ui text-xs font-semibold uppercase tracking-[0.25em] text-[#38bdf8]">
             StoreKit Core
           </p>
 
@@ -192,7 +192,7 @@ Forma de pagamento:
             type="button"
             disabled={isSubmitting}
             onClick={handleSendOrder}
-            className="font-ui mt-6 flex w-full justify-center rounded-full bg-[#ea8506] px-5 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#d97800] hover:shadow-[0_18px_40px_rgba(234,133,6,0.22)] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
+            className="font-ui mt-6 flex w-full justify-center rounded-full bg-[#38bdf8] px-5 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#0ea5e9] hover:shadow-[0_18px_40px_rgba(56,189,248,0.22)] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
           >
             {isSubmitting ? 'Registrando reserva...' : 'Enviar pelo WhatsApp'}
           </button>

@@ -15,12 +15,12 @@ export const storeConfig = {
 
   theme: {
     colors: {
-      primary: '#111827',
-      secondary: '#f9fafb',
-      accent: '#2563eb',
-      text: '#111827',
-      muted: '#6b7280',
-      background: '#ffffff',
+      primary: '#0f172a',
+      secondary: '#f8fafc',
+      accent: '#38bdf8',
+      text: '#f8fafc',
+      muted: '#94a3b8',
+      background: '#020617',
     },
   },
 }

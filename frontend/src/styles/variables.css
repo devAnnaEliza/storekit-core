@@ -1,13 +1,13 @@
 :root {
-  --color-brand-primary: #00174e;
-  --color-brand-accent: #ea8506;
-  --color-brand-muted: #6e6969;
-  --color-brand-black: #000000;
-  --color-brand-white: #ffffff;
+  --color-brand-primary: #0f172a;
+  --color-brand-accent: #38bdf8;
+  --color-brand-muted: #94a3b8;
+  --color-brand-black: #020617;
+  --color-brand-white: #f8fafc;
 
-  --color-background: #fafafa;
-  --color-surface: #ffffff;
-  --color-border: rgba(0, 23, 78, 0.12);
+  --color-background: #020617;
+  --color-surface: rgba(15, 23, 42, 0.72);
+  --color-border: rgba(148, 163, 184, 0.16);
 
   --font-brand: "Inter", system-ui, sans-serif;
   --font-heading: "Inter", system-ui, sans-serif;

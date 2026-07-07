@@ -12,9 +12,9 @@ body {
   margin: 0;
   font-family: var(--font-body);
   background:
-    radial-gradient(circle at top left, rgba(234, 133, 6, 0.16), transparent 30rem),
-    radial-gradient(circle at bottom right, rgba(234, 133, 6, 0.08), transparent 34rem),
-    linear-gradient(135deg, #00174e 0%, #000814 55%, #000000 100%);
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 30rem),
+    radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.12), transparent 34rem),
+    linear-gradient(135deg, #020617 0%, #0f172a 52%, #111827 100%);
   color: var(--color-brand-white);
   background-attachment: fixed;
 }

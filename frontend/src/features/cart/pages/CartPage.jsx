@@ -117,7 +117,7 @@ function CartPage() {
             </div>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/3 p-4">
-              <p className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-[#ea8506]">
+              <p className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-[#38bdf8]">
                 Valores da peça
               </p>
 
