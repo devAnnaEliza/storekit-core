@@ -26,34 +26,54 @@ function Home() {
   }, [])
 
   return (
-    <main>
+    <main className="home">
       <section className="home-hero">
-        <div className="home-showcase">
-          <div className="home-hero__content">
-            <p className="home-hero__eyebrow">Loja oficial</p>
+        <div className="home-hero__content">
+          <p className="home-hero__eyebrow">Loja virtual modular</p>
 
-            <h1 className="home-hero__brand">STOREKIT CORE</h1>
-            
-          </div>
+          <h1 className="home-hero__title">StoreKit Core</h1>
 
-          <div className="home-showcase__product">
-            {loading && (
-              <div className="home-feedback">
-                <p>Carregando produto...</p>
-              </div>
-            )}
+          <p className="home-hero__description">
+            Uma base clara, moderna e reutilizável para criar lojas virtuais
+            profissionais para diferentes segmentos.
+          </p>
 
-            {!loading && error && (
-              <div className="home-feedback home-feedback--error">
-                <p>{error}</p>
-              </div>
-            )}
-
-            {!loading && !error && products.length > 0 && (
-              <ProductCard product={products[0]} />
-            )}
-          </div>
+          <a href="#catalog" className="home-hero__button">
+            Explorar catálogo
+          </a>
         </div>
+
+        <div className="home-hero__preview">
+          {!loading && !error && products.length > 0 && (
+            <ProductCard product={products[0]} />
+          )}
+        </div>
+      </section>
+
+      <section id="catalog" className="home-catalog">
+        <header className="home-catalog__header">
+          <h2>Catálogo demonstrativo</h2>
+        </header>
+
+        {loading && (
+          <div className="home-feedback">
+            <p>Carregando produtos...</p>
+          </div>
+        )}
+
+        {!loading && error && (
+          <div className="home-feedback home-feedback--error">
+            <p>{error}</p>
+          </div>
+        )}
+
+        {!loading && !error && (
+          <div className="home-catalog__grid">
+            {products.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
       </section>
     </main>
   )

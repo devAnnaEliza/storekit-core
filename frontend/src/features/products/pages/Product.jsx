@@ -156,12 +156,6 @@ function Product() {
                   )
                 })}
               </div>
-
-              {selectedVariant && (
-                <p className="font-body mt-4 text-sm text-white/50">
-                  {selectedStock} unidades disponíveis.
-                </p>
-              )}
             </section>
           )}
 

@@ -6,32 +6,48 @@ import { useCart } from '@/features/cart/hooks/useCart'
 function StoreLayout() {
   const { cartItems } = useCart()
 
-  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0)
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  )
 
   return (
-    <div className="min-h-screen text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/10 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
-          <Link to="/" className="relative flex items-center">
-            <span className="absolute inset-0 rounded-full bg-white/30 blur-xl" />
+    <div className="min-h-screen bg-(--color-background) text-(--color-text)">
+    <header className="sticky top-0 z-50 border-b border-(--color-border) bg-(--color-surface) backdrop-blur-xl">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+            <Link
+              to="/"
+              aria-label={`Ir para ${storeConfig.brand.name}`}
+              className="flex items-center"
+            >
+              {storeConfig.brand.logo ? (
+                <img
+                  src={storeConfig.brand.logo}
+                  alt={storeConfig.brand.name}
+                  className="h-12 w-auto object-contain"
+                />
+              ) : (
+                <span className="font-heading text-xl font-semibold text-(--color-brand-primary)">
+                  {storeConfig.brand.name}
+                </span>
+              )}
+            </Link>
 
-            <img
-              src={storeConfig.brand.logo}
-              alt={storeConfig.brand.name}
-              className="relative h-14 w-auto object-contain"
-            />
-          </Link>
+            <Link
+              to="/cart"
+              aria-label={`Carrinho com ${totalItems} item${totalItems === 1 ? '' : 's'}`}
+              className="flex items-center gap-2 rounded-full border border-(--color-border) bg-(--color-surface) px-5 py-2 text-sm font-medium text-(--color-brand-primary) transition-colors duration-200 hover:border-(--color-brand-accent) hover:text-(--color-brand-accent)"
+            >
+              <span>Carrinho</span>
 
-          <Link
-            to="/cart"
-            className="font-ui rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition hover:border-[#38bdf8] hover:text-[#38bdf8]"
-          >
-            Carrinho ({totalItems})
-          </Link>
-        </nav>
+              <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-(--color-brand-primary) px-2 text-xs font-semibold text-white">
+                {totalItems}
+              </span>
+            </Link>
+          </nav>
       </header>
 
-      <main className="mx-auto min-h-[calc(100vh-81px)] max-w-6xl px-5 sm:px-6 lg:px-8">
+      <main className="mx-auto min-h-[calc(100vh-80px)] max-w-7xl px-5 py-8 sm:px-6 lg:px-8">
         <Outlet />
       </main>
     </div>

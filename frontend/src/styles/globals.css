@@ -14,8 +14,13 @@ body {
   background:
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 30rem),
     radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.12), transparent 34rem),
-    linear-gradient(135deg, #020617 0%, #0f172a 52%, #111827 100%);
-  color: var(--color-brand-white);
+    linear-gradient(
+      135deg,
+      var(--color-background-start) 0%,
+      var(--color-background-middle) 52%,
+      var(--color-background-end) 100%
+    );
+  color: var(--color-text);
   background-attachment: fixed;
 }
 
@@ -68,4 +73,24 @@ a {
 
 .font-body {
   font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+}
+
+p,
+span,
+label,
+li {
+  color: var(--color-text);
+}
+
+small {
+  color: var(--color-text-muted);
 }

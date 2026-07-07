@@ -1,0 +1,11 @@
+<svg width="220" height="52" viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">StoreKit Core</title>
+  <desc id="desc">Logo horizontal do StoreKit Core</desc>
+  <rect width="52" height="52" rx="14" fill="#101828"/>
+  <rect x="14" y="14" width="10" height="10" rx="3" fill="#FFFFFF"/>
+  <rect x="28" y="14" width="10" height="10" rx="3" fill="#D0D5DD"/>
+  <rect x="14" y="28" width="10" height="10" rx="3" fill="#D0D5DD"/>
+  <rect x="28" y="28" width="10" height="10" rx="3" fill="#FFFFFF"/>
+  <text x="66" y="30" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#101828" letter-spacing="-0.8">StoreKit</text>
+  <text x="173" y="30" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#667085" letter-spacing="1.8">CORE</text>
+</svg>
