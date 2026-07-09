@@ -2,13 +2,13 @@
   <title id="title">StoreKit Core logo</title>
   <desc id="desc">StoreKit Core wordmark with modular hexagon symbol.</desc>
   <g transform="translate(0 0)">
-    <path d="M80 18L132 48V108L80 138L28 108V48L80 18Z" stroke="#111827" stroke-width="10" stroke-linejoin="round"/>
-    <path d="M52 63L80 47L108 63" stroke="#111827" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M52 97L80 113L108 97" stroke="#111827" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M80 18L132 48V108L80 138L28 108V48L80 18Z" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M52 63L80 47L108 63" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M52 97L80 113L108 97" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M80 62L102 75V101L80 114L58 101V75L80 62Z" fill="#2F80ED"/>
   </g>
   <g transform="translate(170 45)">
-    <text x="0" y="34" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="4" fill="#111827">STOREKIT</text>
+    <text x="0" y="34" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="4" fill="#FFFFFF">STOREKIT</text>
     <text x="2" y="78" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="16" fill="#2F80ED">CORE</text>
   </g>
 </svg>

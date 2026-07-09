@@ -1,9 +1,8 @@
-<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">StoreKit Core Icon</title>
-  <desc id="desc">Ícone modular do StoreKit Core</desc>
-  <rect width="52" height="52" rx="14" fill="#101828"/>
-  <rect x="14" y="14" width="10" height="10" rx="3" fill="#FFFFFF"/>
-  <rect x="28" y="14" width="10" height="10" rx="3" fill="#D0D5DD"/>
-  <rect x="14" y="28" width="10" height="10" rx="3" fill="#D0D5DD"/>
-  <rect x="28" y="28" width="10" height="10" rx="3" fill="#FFFFFF"/>
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">StoreKit Core icon</title>
+  <desc id="desc">Modular hexagon mark for StoreKit Core.</desc>
+  <path d="M80 18L132 48V108L80 138L28 108V48L80 18Z" stroke="#111827" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M52 63L80 47L108 63" stroke="#111827" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 97L80 113L108 97" stroke="#111827" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M80 62L102 75V101L80 114L58 101V75L80 62Z" fill="#2F80ED"/>
 </svg>
